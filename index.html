@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+
+
+    <style>
+html {
+  scroll-behavior: smooth;
+}
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/images/beach.png">
+    <title>Mangalore ChatBot</title>
+</head>
+<body>  
+ 
+<main class="flex flex-col xl:flex-row h-screen">
+  <div class="w-full xl:w-1/2 my-4 h-screen flex items-center justify-center">
+    <div class="w-4/8">
+      <h1 class="tracking-tight font-light text-gray-500 text-3xl ">Welcome to </h3>
+        <h1 class="text-6xl md:text-6xl tracking-tight leading-none font-extrabold text-cyan-500">Mangalore ChatBot</h1>
+        <p class="text-lg text-gray-500 mt-2">Ask Me anythig about Mangalore.<br><br>
+          With the great Arabian Sea on one side and towering hills of the Western Ghats on the other, the Managlore city of Karnataka becomes a perfect holiday destination, which almost every tourists love visiting. This vibrant city has everything from exotic beaches to old style seaports to majestic mountains and ancient buildings & temples. Few days won't be enough to explore the rich culture and natural beauty of Mangalore, which is blessed with so many attractions. One must take a week long break to plan a tour to Mangalore and seek solitude in the comfort of this city.
+        </p>
+        <div style="height: 100%; width: 100%;margin-top:10px" id="webchat" role="main"></div>
+
+    </div>
+   
+  </div>
+  
+  <div class="w-full xl:w-1/2 h-screen">
+    <img class="object-cover w-full h-screen" src="https://source.unsplash.com/KMn4VEeEPR8" alt="Robot Group">
+  </div>
+</main>
+</div>
+
+
+
+<script>
+     
+  // Set  the CSS rules.
+  const styleSet = window.WebChat.createStyleSet({
+      bubbleBackground: 'rgba(0, 0, 255, .1)',
+      bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+      rootHeight: '100%',
+      rootWidth: '70%',
+      backgroundColor: '#eeeee4'
+   });
+
+   // After generated, you can modify the CSS rules.
+   // Change font family and weight. 
+   styleSet.textContent = {
+      ...styleSet.textContent,
+      fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+     
+   };
+
+ // Set the avatar options. 
+  const avatarOptions = {
+      botAvatarInitials: 'BOT',
+      userAvatarInitials: 'ME'
+      };
+
+ window.WebChat.renderWebChat({
+   directLine: window.WebChat.createDirectLine({
+       token: 'YlPJR8S85v4.SFvM7L2YMIJ3Gxavv5RI31jjQnUulZGgfo_r8GTu4xA'}),
+   styleSet,
+   styleOptions: avatarOptions
+ }, document.getElementById('webchat'));
+ 
+</script>
+
+</body>
